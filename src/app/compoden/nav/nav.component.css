@@ -1,0 +1,16 @@
+li a {
+    padding: 10px;
+    font-size: 12px;
+    font-family: monospace;
+    color: #221F20;
+    font-weight: bold;
+}
+
+.form {
+    position: relative;
+}
+
+.bnt {
+    position: absolute;
+    padding: 1px 6px;
+}
