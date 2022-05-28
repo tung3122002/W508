@@ -18,6 +18,7 @@
             <td>
                 <button class="btn btn-danger" (click)="onHandleDelete(product.id)">Delete</button>
                 <button class="btn btn-info ms-1" (click)="onHandleGetInfo(product)">Detail</button>
+                <button routerLink="/product/{{ product.id }}">Detail</button>
             </td>
         </tr>
     </tbody>

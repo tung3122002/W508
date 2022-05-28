@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from 'src/app/models/Product';
+import mockData from 'src/data';
 
 @Component({
   selector: 'app-product-detail',
@@ -8,11 +9,12 @@ import { IProduct } from 'src/app/models/Product';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
+  productDetail!: IProduct;
 
-  product!: IProduct;
   constructor(private router: ActivatedRoute) {
     const id = this.router.snapshot.paramMap.get('id');
-    // this.product = Array.find(item => item.id === id);
+    console.log(mockData)
+    this.productDetail = mockData.find(item => item.id == +id!)!;
   }
 
   ngOnInit(): void {

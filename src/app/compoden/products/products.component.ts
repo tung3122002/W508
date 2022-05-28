@@ -8,7 +8,7 @@ import { IProduct } from 'src/app/models/Product';
 })
 export class ProductsComponent implements OnInit {
   @Input() products!: IProduct[]
-  
+  @Input('data') productList!: IProduct[];
   constructor() { }
   productStatus: boolean = false;
   productDetail!: IProduct;
@@ -21,6 +21,9 @@ export class ProductsComponent implements OnInit {
   onHandleGetInfo(product: IProduct) {
     this.productDetail = product;
     console.log('product', product)
+  }
+  showDetail(id: any) {
+    this.productDetail = this.productList.find(item => item.id === id)!;
   }
   ngOnInit(): void {
   }
