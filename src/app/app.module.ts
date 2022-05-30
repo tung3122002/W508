@@ -9,7 +9,8 @@ import { NavComponent } from './compoden/nav/nav.component';
 import { ProductsComponent } from './compoden/products/products.component';
 import { ProductAddComponent } from './compoden/product-add/product-add.component';
 import { ProductDetailComponent } from './compoden/product-detail/product-detail.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { ProductDetailComponent } from './compoden/product-detail/product-detail
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

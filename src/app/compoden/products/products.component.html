@@ -10,15 +10,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of products; let i = index">
+        <tr *ngFor="let product of productList; let i = index">
             <td>{{ i + 1 }}</td>
             <td>{{ product.name }}</td>
             <td>{{ product.price }}</td>
             <td>{{ product.status ? 'Còn hàng' : 'hết hàng' }}</td>
             <td>
-                <button class="btn btn-danger" (click)="onHandleDelete(product.id)">Delete</button>
-                <button class="btn btn-info ms-1" (click)="onHandleGetInfo(product)">Detail</button>
+                <!-- <button class="btn btn-danger" (click)="onHandleDelete(product.id)">Delete</button>
+                <button class="btn btn-info ms-1" (click)="onHandleGetInfo(product)">Detail</button> -->
                 <button routerLink="/product/{{ product.id }}">Detail</button>
+                <button class="btn btn-primary" (click)="onRemoveItem(product.id)">Remove</button>
             </td>
         </tr>
     </tbody>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-add',
@@ -11,7 +12,7 @@ export class ProductAddComponent implements OnInit {
     name: "",
     price: 0
   }
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,6 @@ export class ProductAddComponent implements OnInit {
     console.log('submited')
     console.log('this.product', this.product);
     // Bắn dữ liệu lên app.component.ts
-    this.onAdd.emit(this.product)
+    this.productService.addProduct(this.product)
   }
 }
